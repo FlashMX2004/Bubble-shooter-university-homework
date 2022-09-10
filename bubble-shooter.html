@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Bubble shooter</title>
+	<meta charset="utf-8" />
+    <link id="css" rel="stylesheet" type="text/css" href="styles/bubble-shooter.css" />
+    <script type="text/javascript" src="js/bubble-shooter-core.js"></script>
+    <script type="text/javascript" src="js/bubble-shooter.js"></script>
+    <script type="text/javascript" src="js/switch-theme.js"></script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">Bubble shooter</a>
+        <button onclick="switchTheme('../')"></button>
+    </header>
+
+    <main bubble-colors="7"
+          bubble-collision-radius="20" 
+          bubble-width="40" 
+          bubble-height="40">
+        <grid column-count="15" row-height="34">
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+            <row></row>
+        </grid>
+
+        <player style="overflow:visible">
+            <!--<bubble style="left: 210px; top: 10px"></bubble>-->
+            <arrow><t></t></arrow>
+        </player>
+    </main>
+
+    <display>
+        <div id="score">Score: 0</div>
+    </display>
+
+</body>
+</html>

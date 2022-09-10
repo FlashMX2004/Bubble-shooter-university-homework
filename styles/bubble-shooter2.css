@@ -1,0 +1,193 @@
+﻿:root{
+    --bubble-radius: 40px;
+    --bubble-half-radius: 20px;
+    --row-height: 34px;
+}
+
+body {
+    background-color:darkcyan;
+}
+
+header, h1 {
+    text-align: center;
+}
+
+header a, h1 {
+    text-decoration: double;
+    font-size: 48px;
+    color: gold;
+}
+
+header button {
+    display: block;
+    width: 50px;
+    height: 25px;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color:antiquewhite;
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-content: center;
+
+    margin: auto;
+    padding:0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 400px;
+    min-height: 100px;
+
+    border-width: 3px;
+    border-style:solid;
+    border-color: olive;
+    background-color: midnightblue;
+}
+
+menu a {
+    display:block;
+    margin:auto;
+    width: 200px;
+
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+
+    border-width: 3px;
+    border-style:solid;
+
+    border-color: black;
+    color:darkgreen;
+    background-color: olive;
+}
+
+menu a:hover {
+    border-color: peru;
+    color:antiquewhite;
+    background-color:firebrick;
+}
+
+display {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 500px;
+
+    border-width: 3px;
+    border-style:solid;
+    border-color: black;
+    color:darkgreen;
+    background-color: olive;
+}
+
+display div {
+    font-size: 30px;
+    font-style:italic;
+    font-weight:bold;
+    text-align:center;
+}
+
+/* GAME */
+main {
+    margin: auto;
+    padding: 5px;
+    width: 300px;
+    background-image:linear-gradient(-45deg,#999,#111);
+    border-width: 5px;
+    border-color:peru;
+    border-style:dashed;
+}
+
+main > player {
+    display: block;
+    position: relative;
+    height: 50px;
+    background-image: repeating-linear-gradient(-45deg, rgba(0,0,0,.3) 4px, rgba(0,0,0,.3) 8px,transparent 8px, transparent 12px),
+        repeating-linear-gradient(45deg, rgba(0,0,0,.3) 4px, rgba(0,0,0,.3) 8px,transparent 8px, transparent 12px)
+}
+main > player > arrow { 
+    display: block; 
+    position: absolute; 
+    width: 0px; 
+    height: 0px;
+}
+main > player > arrow > t {
+    position: absolute;
+    left: -20px;
+    bottom: var(--bubble-half-radius); /*top: -10px*/
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #0f0;
+}
+
+main > grid {
+    display: block;
+}
+
+main > grid > row {
+    height: var(--row-height);
+
+    display: block;
+    position: relative;
+}
+
+main bubble {
+    position: absolute;
+    height: var(--bubble-radius);
+    width: var(--bubble-radius);
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+main .bubble-type-0 { background-image: radial-gradient(transparent, rgba(255,0,0,.7)); }
+main .bubble-type-1 { background-image: radial-gradient(transparent, rgba(0,255,0,.7)); }
+main .bubble-type-2 { background-image: radial-gradient(transparent, rgba(0,0,255,.7)); }
+main .bubble-type-3 { background-image: radial-gradient(transparent, rgba(255,0,255,.7)); }
+main .bubble-type-4 { background-image: radial-gradient(transparent, rgba(255,255,0,.7)); }
+main .bubble-type-5 { background-image: radial-gradient(transparent, rgba(0,255,255,.7)); }
+main .bubble-type-6 { background-image: radial-gradient(transparent, rgba(255,255,255,.7)); }
+
+main .drop {
+    animation: drop 0.5s ease forwards;
+}
+
+main .drop-float {
+    animation: drop-float 0.5s ease forwards;
+}
+
+/* KEYFRAMES */
+@keyframes drop {
+    0% {
+        border-radius: 50%;
+        transform: scale(1) rotate(0deg);
+    }
+    50%{
+        border-radius: 0%;
+        transform: scale(1) rotate(45deg);
+    }
+    100% {
+        border-radius: 0%;
+        transform: scale(0) rotate(45deg);
+    }
+}
+
+@keyframes drop-float {
+    0% {
+        opacity: 1;
+        top: 0px;
+    }
+    100% {
+        opacity: 0;
+        top: 100px;
+    }
+}
+/* /GAME */

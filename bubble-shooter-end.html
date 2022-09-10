@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link id="css" rel="stylesheet" type="text/css" href="styles/bubble-shooter.css" />
+    <script type="text/javascript" src="js/switch-theme.js"></script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">Bubble shooter</a>
+        <button onclick="switchTheme('../')"></button>
+    </header>
+
+
+    <h1>The end!</h1>
+
+    <display id="display"></display>
+
+    <menu>
+        <a href="bubble-shooter.html">Restart</a>
+        <a href="index.html">Back to menu</a>
+    </menu>
+
+    <script>
+        let display = document.getElementById('display');
+        let div = document.createElement('div');
+        if (localStorage.getItem('gameoverstate') == 'win') {
+            div.innerHTML = 'Wow, you win!';
+        } else {
+            div.innerHTML = 'Sorry, you lose :(';
+        }
+        display.appendChild(div);
+
+        div = document.createElement('div');
+        div.innerHTML = 'Score: ' + localStorage.getItem('score');
+        display.appendChild(div);
+    </script>
+</body>
+</html>

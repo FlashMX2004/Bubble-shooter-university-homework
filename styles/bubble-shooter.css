@@ -1,0 +1,191 @@
+﻿:root{
+    --bubble-radius: 40px;
+    --bubble-half-radius: 20px;
+    --row-height: 34px;
+}
+
+body {
+    background-color:antiquewhite;
+}
+
+header, h1 {
+    text-align: center;
+}
+
+header a, h1 {
+    text-decoration: double;
+    font-size: 48px;
+    color: orangered;
+}
+
+header button {
+    display: block;
+    width: 50px;
+    height: 25px;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color:darkcyan;
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-content: center;
+
+    margin: auto;
+    padding:0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    width: 400px;
+    min-height: 100px;
+
+    border-width: 3px;
+    border-style:solid;
+    border-color: peru;
+    background-color:aliceblue;
+}
+
+menu a {
+    display:block;
+    margin: auto;
+    width: 200px;
+    
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+
+    border-width: 3px;
+    border-style:solid;
+    border-color: peru;
+    color:firebrick;
+    background-color:antiquewhite;
+}
+
+menu a:hover {
+    border-color: peru;
+    color:antiquewhite;
+    background-color:firebrick;
+}
+
+display {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 500px;
+    color:coral;
+    background-color: aliceblue;
+    border-width: 5px;
+    border-color:coral;
+    border-style:groove;
+}
+
+display div {
+    font-size: 30px;
+    font-style:italic;
+    font-weight:bold;
+}
+
+/* GAME */
+main {
+    margin: auto;
+    padding: 5px;
+    width: 300px;
+    background-image:linear-gradient(-45deg,#999,#eee);
+    border-width: 5px;
+    border-color:darkmagenta;
+    border-style:groove;
+}
+
+main > player {
+    display: block;
+    position: relative;
+    height: 50px;
+    background-image: repeating-linear-gradient(-45deg, rgba(0,0,0,.3) 4px, rgba(0,0,0,.3) 8px,transparent 8px, transparent 12px)/*,
+        repeating-linear-gradient(45deg, rgba(0,0,0,.3) 4px, rgba(0,0,0,.3) 8px,transparent 8px, transparent 12px)*/
+}
+main > player > arrow { 
+    display: block; 
+    position: absolute; 
+    width: 0px; 
+    height: 0px;
+}
+main > player > arrow > t {
+    position: absolute;
+    left: -20px;
+    bottom: var(--bubble-half-radius); /*top: -10px*/
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #0f0;
+}
+
+main > grid {
+    display: block;
+}
+
+main > grid > row {
+    height: var(--row-height);
+
+    display: block;
+    position: relative;
+}
+
+main bubble {
+    position: absolute;
+    height: var(--bubble-radius);
+    width: var(--bubble-radius);
+    border-radius: 50%;
+    background-color: #f00;
+}
+
+main .bubble-type-0 { background-image: linear-gradient(-45deg,#b00,#f00); }
+main .bubble-type-1 { background-image: linear-gradient(-45deg,#0b0,#0f0); }
+main .bubble-type-2 { background-image: linear-gradient(-45deg,#00b,#00f); }
+main .bubble-type-3 { background-image: linear-gradient(-45deg,#b0b,#f0f); }
+main .bubble-type-4 { background-image: linear-gradient(-45deg,#bb0,#ff0); }
+main .bubble-type-5 { background-image: linear-gradient(-45deg,#0bb,#0ff); }
+main .bubble-type-6 { background-image: linear-gradient(-45deg,#bbb,#fff); }
+
+main .drop {
+    animation: drop 0.5s ease forwards;
+}
+
+main .drop-float {
+    animation: drop-float 0.5s ease forwards;
+}
+
+/* KEYFRAMES */
+@keyframes drop {
+    0% {
+        opacity: 1;
+        top: 0px;
+    }
+    50%{
+        opacity: 0.5;
+        top: -20px;
+    }
+    100% {
+        opacity: 0;
+        top: 50px;
+    }
+}
+
+@keyframes drop-float {
+    0% {
+        opacity: 1;
+        top: 0px;
+    }
+    100% {
+        opacity: 0;
+        top: 100px;
+    }
+}
+
+/* /GAME */
